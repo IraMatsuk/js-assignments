@@ -30,7 +30,18 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if(num % 15 == 0){
+      return 'FizzBuzz';
+    }
+    else if(num % 3 == 0){
+      return 'Fizz';
+    }
+    else if(num % 5 == 0){
+      return 'Buzz';
+    }
+    else{
+      return num;
+    }
 }
 
 
@@ -46,7 +57,11 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+var result = 1;
+    for (var i = 1; i <= n; i++) {
+        result = result * i;
+    }   
+    return result;
 }
 
 
@@ -63,7 +78,7 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    return ((n2-n1)+1) * (n1 + n2) / 2;
 }
 
 
@@ -82,8 +97,9 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
-}
+    if(a+b > c && a+c > b && b+c > a) return true;
+     return false;
+  }
 
 
 /**
@@ -166,8 +182,14 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
-}
+    for (var i = 0; i < str.length; i++) {
+     var c = str.charAt(i);
+     if (str.indexOf(c) == i && str.indexOf(c, i + 1) == -1) {
+        return c;
+     }
+    }
+  return null;
+  }
 
 
 /**
@@ -209,7 +231,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    return str.split("").reverse().join("");;
 }
 
 
@@ -226,8 +248,8 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
-}
+    return num.toString().split('').reverse().join(''); 
+  }
 
 
 /**
